@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>East African Girls in Tech - Empowering Women in Technology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a237e;
+            --secondary-blue: #303f9f;
+            --accent-red: #d32f2f;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 35, 126, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+            max-width: 600px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-red);
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-blue);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .flags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .flag {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flag img {
+            width: 60px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .flag span {
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        /* Courses Section */
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-img img {
+            transform: scale(1.1);
+        }
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .course-content h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-blue);
+            margin-bottom: 10px;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .course-duration {
+            display: flex;
+            align-items: center;
+        }
+
+        .course-duration i {
+            margin-right: 5px;
+            color: var(--accent-red);
+        }
+
+        .course-price {
+            font-weight: 600;
+            color: var(--accent-red);
+        }
+
+        .course-free {
+            background-color: #4caf50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .course-desc {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .course-btn {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .course-btn:hover {
+            background-color: var(--primary-blue);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 50px auto;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: modalOpen 0.5s ease;
+        }
+
+        @keyframes modalOpen {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .course-details {
+            margin-bottom: 30px;
+        }
+
+        .course-details h4 {
+            font-size: 1.2rem;
+            color: var(--secondary-blue);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+        }
+
+        .course-details ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .course-details ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Application Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(48, 63, 159, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(26, 35, 126, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--secondary-blue);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-gray);
+        }
+
+        .contact-text p, .contact-text a {
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent-red);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-red);
+            transform: translateY(-3px);
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chat-btn {
+            background-color: var(--accent-red);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-container {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+        }
+
+        .chat-header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            max-width: 80%;
+        }
+
+        .received {
+            align-self: flex-start;
+        }
+
+        .sent {
+            align-self: flex-end;
+        }
+
+        .message-content {
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .received .message-content {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            border-top-left-radius: 0;
+        }
+
+        .sent .message-content {
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            border-top-right-radius: 0;
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+        }
+
+        .chat-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        .send-btn {
+            background-color: var(--accent-red);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-red);
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-icon {
+            color: var(--accent-red);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        .footer-bottom p {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-blue);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: all 0.3s ease;
+                opacity: 0;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .courses-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .chat-container {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                 <img src="logo2.png" alt="east african girls in tech">
+               <!--- <img src="https://via.placeholder.com/50x50.png?text=EAGIT" alt="East African Girls in Tech Logo"> -->
+                <div class="logo-text">
+                    <h1>East African Girls in Tech</h1>
+                    <p>Empowering East African girls through technology</p>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#apply" class="btn btn-outline">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Empowering East African Girls Through Technology Education</h2>
+                <p>Join our free and affordable tech courses designed specifically for girls in East Africa. Gain in-demand skills and certifications to launch your tech career.</p>
+                <div class="hero-btns">
+                    <a href="#courses" class="btn">Explore Courses</a>
+                    <a href="#apply" class="btn btn-outline">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About East African Girls in Tech</h2>
+                <p>We are a non-profit organization dedicated to bridging the gender gap in technology across East Africa.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Girls learning technology">
+                </div>
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>East African Girls in Tech (EAGIT) was founded in 2020 with the mission to empower young women across East Africa with technology skills that can transform their lives and communities.</p>
+                    <p>We provide free and affordable training in various tech fields, mentorship programs, and career placement assistance to help our graduates secure meaningful employment in the tech industry.</p>
+                    <p>Our headquarters is located in Johannesburg, South Africa, with training centers across East Africa serving girls from all backgrounds.</p>
+                    
+                    <h4>Countries We Serve:</h4>
+                    <div class="flags-container">
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/cd.png" alt="DR Congo Flag">
+                            <span>DR Congo</span>
+                        </div>
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/tz.png" alt="Tanzania Flag">
+                            <span>Tanzania</span>
+                        </div>
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda Flag">
+                            <span>Rwanda</span>
+                        </div>
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/bi.png" alt="Burundi Flag">
+                            <span>Burundi</span>
+                        </div>
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag">
+                            <span>Kenya</span>
+                        </div>
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/ug.png" alt="Uganda Flag">
+                            <span>Uganda</span>
+                        </div>
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/ss.png" alt="South Sudan Flag">
+                            <span>South Sudan</span>
+                        </div>
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/so.png" alt="Somalia Flag">
+                            <span>Somalia</span>
+                        </div>
+                        <div class="flag">
+                            <img src="https://flagcdn.com/w40/za.png" alt="South Africa Flag">
+                            <span>South Africa (HQ)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="section bg-gray" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Courses</h2>
+                <p>We offer a wide range of technology courses designed to equip you with in-demand skills. Many courses include free certification exams for girls.</p>
+            </div>
+            <div class="courses-container">
+                <!-- Software Development Course -->
+                <div class="course-card" onclick="openCourseModal('software-development')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Software Development">
+                    </div>
+                    <div class="course-content">
+                        <h3>Software Development</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 6 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Learn full-stack web development with modern technologies like JavaScript, React, Node.js, and databases.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Course -->
+                <div class="course-card" onclick="openCourseModal('cybersecurity')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cybersecurity">
+                    </div>
+                    <div class="course-content">
+                        <h3>Cybersecurity Fundamentals</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 4 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Master the basics of cybersecurity, threat detection, and protection strategies for modern digital environments.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Web Applications Course -->
+                <div class="course-card" onclick="openCourseModal('web-app')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Web Applications">
+                    </div>
+                    <div class="course-content">
+                        <h3>Web Applications Development</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 5 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Build interactive web applications using modern frameworks and deploy them to the cloud.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Ethical Hacking Course -->
+                <div class="course-card" onclick="openCourseModal('ethical-hacking')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Ethical Hacking">
+                    </div>
+                    <div class="course-content">
+                        <h3>Ethical Hacking</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 6 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Learn penetration testing and ethical hacking techniques to secure systems and networks.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Microsoft Certifications Course -->
+                <div class="course-card" onclick="openCourseModal('microsoft-certs')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Microsoft Certifications">
+                    </div>
+                    <div class="course-content">
+                        <h3>Microsoft Certifications</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 3-6 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE exams for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Prepare for various Microsoft certifications including Azure, Microsoft 365, and Windows Server.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- CompTIA Courses -->
+                <div class="course-card" onclick="openCourseModal('comptia')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="CompTIA Certifications">
+                    </div>
+                    <div class="course-content">
+                        <h3>CompTIA Certifications</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 2-4 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE exams for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Prepare for CompTIA A+, Security+, and Network+ certifications with our comprehensive training.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Cloud Azure Course -->
+                <div class="course-card" onclick="openCourseModal('cloud-azure')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cloud Azure">
+                    </div>
+                    <div class="course-content">
+                        <h3>Microsoft Azure Cloud</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 3 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Learn cloud computing with Microsoft Azure, including deployment, management, and security.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Advanced Security Courses -->
+                <div class="course-card" onclick="openCourseModal('advanced-security')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Advanced Security">
+                    </div>
+                    <div class="course-content">
+                        <h3>Advanced Security Certifications</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 6-9 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">Discounted exams</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Prepare for OSCP, CEH, eJPT and other advanced security certifications with hands-on labs.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Networking Courses -->
+                <div class="course-card" onclick="openCourseModal('networking')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Networking">
+                    </div>
+                    <div class="course-content">
+                        <h3>Networking Certifications</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 4-6 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE CCNA for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Prepare for CCNA and CCNP certifications with hands-on networking labs and simulations.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Tourism & Digital Marketing -->
+                <div class="course-card" onclick="openCourseModal('tourism-marketing')">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Tourism & Digital Marketing">
+                    </div>
+                    <div class="course-content">
+                        <h3>Tourism & Digital Marketing</h3>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i> 3 Months
+                            </div>
+                            <div class="course-price">
+                                <span class="course-free">FREE for girls</span>
+                            </div>
+                        </div>
+                        <p class="course-desc">Learn how to promote tourism businesses using digital marketing strategies and social media.</p>
+                        <a href="#" class="course-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Modals -->
+    <!-- Software Development Modal -->
+    <div class="modal" id="software-development-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Software Development</h3>
+                <button class="close-modal" onclick="closeModal('software-development-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>Our comprehensive Software Development course equips you with the skills needed to become a full-stack developer. You'll learn both front-end and back-end technologies to build modern web applications.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>6 months (24 weeks) of intensive training</p>
+                    <p>Part-time options available (extends to 9 months)</p>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>HTML5, CSS3, and JavaScript (ES6+) fundamentals</li>
+                        <li>Front-end development with React.js</li>
+                        <li>Back-end development with Node.js and Express</li>
+                        <li>Database design with MongoDB and SQL</li>
+                        <li>RESTful API development</li>
+                        <li>Version control with Git and GitHub</li>
+                        <li>Deployment and DevOps basics</li>
+                        <li>Agile development methodologies</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>Upon completion, you'll receive our Software Development Certificate. We also prepare you for relevant industry certifications (free exam voucher for girls).</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Front-end Developer</li>
+                        <li>Back-end Developer</li>
+                        <li>Full-stack Developer</li>
+                        <li>Web Application Developer</li>
+                        <li>Software Engineer</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Software Development')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cybersecurity Modal -->
+    <div class="modal" id="cybersecurity-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cybersecurity Fundamentals</h3>
+                <button class="close-modal" onclick="closeModal('cybersecurity-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>This course provides a solid foundation in cybersecurity principles, tools, and best practices to protect systems and networks from digital attacks.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>4 months (16 weeks) of intensive training</p>
+                    <p>Part-time options available (extends to 6 months)</p>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Fundamentals of information security</li>
+                        <li>Network security principles</li>
+                        <li>Cryptography basics</li>
+                        <li>Threat identification and analysis</li>
+                        <li>Security policies and procedures</li>
+                        <li>Incident response fundamentals</li>
+                        <li>Security tools and technologies</li>
+                        <li>Ethical and legal aspects of cybersecurity</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>Upon completion, you'll receive our Cybersecurity Fundamentals Certificate. We also prepare you for CompTIA Security+ certification (free exam voucher for girls).</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Security Analyst</li>
+                        <li>Information Security Specialist</li>
+                        <li>Network Security Administrator</li>
+                        <li>Cybersecurity Technician</li>
+                        <li>IT Security Consultant</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Cybersecurity Fundamentals')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Applications Modal -->
+    <div class="modal" id="web-app-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Web Applications Development</h3>
+                <button class="close-modal" onclick="closeModal('web-app-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>Learn to build modern, interactive web applications using the latest frameworks and technologies. This course covers both front-end and back-end development for web apps.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>5 months (20 weeks) of intensive training</p>
+                    <p>Part-time options available (extends to 7 months)</p>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Advanced JavaScript and TypeScript</li>
+                        <li>Front-end frameworks (React, Angular, or Vue)</li>
+                        <li>State management in web applications</li>
+                        <li>Back-end development with Node.js or Python</li>
+                        <li>Database integration (SQL and NoSQL)</li>
+                        <li>Authentication and authorization</li>
+                        <li>API design and consumption</li>
+                        <li>Progressive Web Apps (PWAs)</li>
+                        <li>Deployment and performance optimization</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>Upon completion, you'll receive our Web Applications Development Certificate. We also prepare you for relevant industry certifications.</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Web Application Developer</li>
+                        <li>Front-end Developer</li>
+                        <li>Full-stack Developer</li>
+                        <li>JavaScript Developer</li>
+                        <li>UI/UX Developer</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Web Applications Development')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ethical Hacking Modal -->
+    <div class="modal" id="ethical-hacking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ethical Hacking</h3>
+                <button class="close-modal" onclick="closeModal('ethical-hacking-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>This course teaches you how to think like a hacker (ethically) to identify and fix security vulnerabilities before malicious hackers can exploit them.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>6 months (24 weeks) of intensive training</p>
+                    <p>Part-time options available (extends to 9 months)</p>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Footprinting and reconnaissance</li>
+                        <li>Scanning networks and systems</li>
+                        <li>Enumeration techniques</li>
+                        <li>System hacking methodologies</li>
+                        <li>Malware threats and analysis</li>
+                        <li>Social engineering techniques</li>
+                        <li>Session hijacking</li>
+                        <li>Web application penetration testing</li>
+                        <li>Wireless network hacking</li>
+                        <li>Cloud security vulnerabilities</li>
+                        <li>Cryptography attacks</li>
+                        <li>Evading IDS, firewalls, and honeypots</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>Upon completion, you'll receive our Ethical Hacking Certificate. We prepare you for Certified Ethical Hacker (CEH) certification (discounted exam for girls).</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Ethical Hacker/Penetration Tester</li>
+                        <li>Security Consultant</li>
+                        <li>Vulnerability Assessor</li>
+                        <li>Security Analyst</li>
+                        <li>Cybersecurity Specialist</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Ethical Hacking')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Microsoft Certifications Modal -->
+    <div class="modal" id="microsoft-certs-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Microsoft Certifications</h3>
+                <button class="close-modal" onclick="closeModal('microsoft-certs-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>Prepare for various Microsoft certifications that validate your skills in Microsoft technologies and enhance your career prospects in IT.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>Varies by certification (3-6 months)</p>
+                    <p>Flexible scheduling options available</p>
+                    
+                    <h4>Available Certifications</h4>
+                    <ul>
+                        <li>Microsoft Azure Fundamentals (AZ-900)</li>
+                        <li>Microsoft 365 Fundamentals (MS-900)</li>
+                        <li>Azure Administrator Associate (AZ-104)</li>
+                        <li>Azure Developer Associate (AZ-204)</li>
+                        <li>Azure Solutions Architect Expert (AZ-305)</li>
+                        <li>Microsoft 365 Modern Desktop Administrator (MD-100, MD-101)</li>
+                        <li>Windows Server Hybrid Administrator (AZ-800, AZ-801)</li>
+                        <li>Power Platform Fundamentals (PL-900)</li>
+                    </ul>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Cloud concepts and Microsoft Azure services</li>
+                        <li>Microsoft 365 workloads and services</li>
+                        <li>Implementing and managing Microsoft cloud services</li>
+                        <li>Developing solutions for Microsoft cloud</li>
+                        <li>Designing cloud and hybrid solutions</li>
+                        <li>Windows client deployment and management</li>
+                        <li>Windows Server administration</li>
+                        <li>Power Platform capabilities</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>We provide full preparation for Microsoft certification exams. Free exam vouchers available for girls upon course completion.</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Cloud Administrator</li>
+                        <li>Cloud Developer</li>
+                        <li>Solutions Architect</li>
+                        <li>Microsoft 365 Administrator</li>
+                        <li>Windows Server Administrator</li>
+                        <li>Power Platform Developer</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Microsoft Certifications')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CompTIA Modal -->
+    <div class="modal" id="comptia-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>CompTIA Certifications</h3>
+                <button class="close-modal" onclick="closeModal('comptia-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>Prepare for globally recognized CompTIA certifications that validate foundational IT skills across various domains.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>Varies by certification (2-4 months each)</p>
+                    <p>Flexible scheduling options available</p>
+                    
+                    <h4>Available Certifications</h4>
+                    <ul>
+                        <li>CompTIA IT Fundamentals (ITF+)</li>
+                        <li>CompTIA A+ (Core 1 & Core 2)</li>
+                        <li>CompTIA Network+</li>
+                        <li>CompTIA Security+</li>
+                        <li>CompTIA Cloud+</li>
+                        <li>CompTIA Linux+</li>
+                    </ul>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>IT fundamentals and concepts</li>
+                        <li>Hardware and software troubleshooting</li>
+                        <li>Networking concepts and infrastructure</li>
+                        <li>Network security and risk management</li>
+                        <li>Cloud computing concepts</li>
+                        <li>Linux system administration</li>
+                        <li>Operational procedures and best practices</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>We provide full preparation for CompTIA certification exams. Free exam vouchers available for girls for A+, Network+, and Security+.</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>IT Support Specialist</li>
+                        <li>Help Desk Technician</li>
+                        <li>Network Administrator</li>
+                        <li>Systems Administrator</li>
+                        <li>Security Specialist</li>
+                        <li>Cloud Support Specialist</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('CompTIA Certifications')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cloud Azure Modal -->
+    <div class="modal" id="cloud-azure-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Microsoft Azure Cloud</h3>
+                <button class="close-modal" onclick="closeModal('cloud-azure-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>Master Microsoft Azure cloud services and prepare for a career in cloud computing with this comprehensive training program.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>3 months (12 weeks) of intensive training</p>
+                    <p>Part-time options available (extends to 5 months)</p>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Microsoft Azure fundamentals and architecture</li>
+                        <li>Azure compute services (VMs, App Services, Containers)</li>
+                        <li>Azure networking (VNets, Load Balancers, Gateways)</li>
+                        <li>Azure storage solutions (Blob, Files, Disks)</li>
+                        <li>Azure databases (SQL Database, Cosmos DB)</li>
+                        <li>Identity, access, and security management</li>
+                        <li>Monitoring and cost management</li>
+                        <li>Azure governance and compliance</li>
+                        <li>Automation with ARM templates and PowerShell</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>Upon completion, you'll receive our Azure Cloud Certificate. We prepare you for Microsoft Azure Administrator (AZ-104) certification (free exam voucher for girls).</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Cloud Administrator</li>
+                        <li>Azure Support Engineer</li>
+                        <li>Cloud Solutions Specialist</li>
+                        <li>DevOps Engineer (with additional training)</li>
+                        <li>Cloud Architect (with experience)</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Microsoft Azure Cloud')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Security Modal -->
+    <div class="modal" id="advanced-security-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Advanced Security Certifications</h3>
+                <button class="close-modal" onclick="closeModal('advanced-security-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>Prepare for advanced cybersecurity certifications that demonstrate high-level skills in penetration testing and security assessment.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>6-9 months depending on certification path</p>
+                    <p>Flexible scheduling options available</p>
+                    
+                    <h4>Available Certifications</h4>
+                    <ul>
+                        <li>Offensive Security Certified Professional (OSCP)</li>
+                        <li>Certified Ethical Hacker (CEH)</li>
+                        <li>eLearnSecurity Junior Penetration Tester (eJPT)</li>
+                        <li>GIAC Penetration Tester (GPEN)</li>
+                        <li>Certified Cloud Security Professional (CCSP)</li>
+                    </ul>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Advanced penetration testing methodologies</li>
+                        <li>Exploit development and vulnerability research</li>
+                        <li>Network and web application penetration testing</li>
+                        <li>Privilege escalation techniques</li>
+                        <li>Password attacks and cracking</li>
+                        <li>Advanced evasion techniques</li>
+                        <li>Cloud security assessment</li>
+                        <li>Reporting and documentation</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>We provide full preparation for advanced security certification exams. Discounted exam vouchers available for girls.</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Penetration Tester</li>
+                        <li>Red Team Member</li>
+                        <li>Security Consultant</li>
+                        <li>Vulnerability Researcher</li>
+                        <li>Security Architect</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Advanced Security Certifications')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Networking Modal -->
+    <div class="modal" id="networking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Networking Certifications</h3>
+                <button class="close-modal" onclick="closeModal('networking-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>Master networking concepts and prepare for Cisco and other networking certifications that are highly valued in the IT industry.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>4-6 months depending on certification path</p>
+                    <p>Flexible scheduling options available</p>
+                    
+                    <h4>Available Certifications</h4>
+                    <ul>
+                        <li>Cisco Certified Network Associate (CCNA)</li>
+                        <li>Cisco Certified Network Professional (CCNP)</li>
+                        <li>CompTIA Network+</li>
+                        <li>Juniper Networks Certified Associate (JNCIA)</li>
+                    </ul>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Networking fundamentals and concepts</li>
+                        <li>IP addressing and subnetting</li>
+                        <li>Network infrastructure (switches, routers, firewalls)</li>
+                        <li>Routing protocols (OSPF, EIGRP, BGP)</li>
+                        <li>Switching concepts (VLANs, STP, EtherChannel)</li>
+                        <li>Network security fundamentals</li>
+                        <li>Wireless networking</li>
+                        <li>Network automation basics</li>
+                        <li>Network troubleshooting</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>We provide full preparation for networking certification exams. Free CCNA exam voucher available for girls.</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Network Administrator</li>
+                        <li>Network Engineer</li>
+                        <li>Systems Administrator</li>
+                        <li>Network Security Specialist</li>
+                        <li>Network Architect</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Networking Certifications')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tourism & Digital Marketing Modal -->
+    <div class="modal" id="tourism-marketing-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tourism & Digital Marketing</h3>
+                <button class="close-modal" onclick="closeModal('tourism-marketing-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="course-details">
+                    <h4>Course Overview</h4>
+                    <p>Combine tourism industry knowledge with digital marketing skills to promote East Africa's tourism potential in the digital age.</p>
+                    
+                    <h4>Course Duration</h4>
+                    <p>3 months (12 weeks) of intensive training</p>
+                    <p>Part-time options available (extends to 5 months)</p>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Fundamentals of the tourism industry</li>
+                        <li>East Africa's tourism potential</li>
+                        <li>Digital marketing strategies for tourism</li>
+                        <li>Social media marketing (Facebook, Instagram, Twitter)</li>
+                        <li>Content creation for tourism (blogs, videos, photos)</li>
+                        <li>Search Engine Optimization (SEO) for tourism websites</li>
+                        <li>Email marketing for tourism businesses</li>
+                        <li>Online booking systems and platforms</li>
+                        <li>Digital analytics for tourism marketing</li>
+                        <li>Influencer marketing in tourism</li>
+                    </ul>
+                    
+                    <h4>Certification</h4>
+                    <p>Upon completion, you'll receive our Tourism & Digital Marketing Certificate. Free for all enrolled girls.</p>
+                    
+                    <h4>Career Opportunities</h4>
+                    <ul>
+                        <li>Digital Marketing Specialist (Tourism)</li>
+                        <li>Social Media Manager (Tourism)</li>
+                        <li>Tourism Content Creator</li>
+                        <li>Tourism Consultant</li>
+                        <li>Tourism Entrepreneur</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="scrollToApply('Tourism & Digital Marketing')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Hear from our graduates who have transformed their lives through our programs.</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"East African Girls in Tech changed my life! After completing the Software Development course, I got a job as a junior developer at a tech company in Nairobi. I'm now able to support my family and inspire other girls in my community."</p>
+                    </div>
+                    <div class="testimonial-author">
+
+                     <img src="testemonia.jpg" alt="fatuma">
+                       <!--- <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Fatuma">  -->
+                        <div class="author-info">
+                            <h4>Fatuma A.</h4>
+                            <p>Software Developer, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The Cybersecurity course gave me the skills and confidence to pursue my dream career. With my CompTIA Security+ certification, I was hired by a bank in Dar es Salaam as a security analyst. Thank you EAGIT!"</p>
+                    </div>
+                    <div class="testimonial-author">
+
+                     <img src="testemonia2.jpg" alt="grace">
+
+                       <!--- <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Grace">  -->
+                        <div class="author-info">
+                            <h4>Grace M.</h4>
+                            <p>Security Analyst, Tanzania</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a single mother, I never thought I could break into tech. The free Web Development course and supportive community at EAGIT helped me start my own web design business. I now work remotely and take care of my children."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Claudine">
+                        <div class="author-info">
+                            <h4>Claudine K.</h4>
+                            <p>Web Designer, Rwanda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="section bg-gray" id="apply">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apply Now</h2>
+                <p>Join East African Girls in Tech and start your journey in technology today.</p>
+            </div>
+            <div class="application-form">
+                <form id="studentApplicationForm">
+                    <h3>Personal Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <select id="country" class="form-control" required>
+                                <option value="">Select your country</option>
+                                <option value="DR Congo">DR Congo</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Burundi">Burundi</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Uganda">Uganda</option>
+                                <option value="South Sudan">South Sudan</option>
+                                <option value="Somalia">Somalia</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City/Town *</label>
+                            <input type="text" id="city" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Full Address</label>
+                        <input type="text" id="address" class="form-control">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth *</label>
+                            <input type="date" id="dob" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender *</label>
+                            <select id="gender" class="form-control" required>
+                                <option value="">Select gender</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <h3>Education Background</h3>
+                    <div class="form-group">
+                        <label for="education">Highest Level of Education *</label>
+                        <select id="education" class="form-control" required>
+                            <option value="">Select highest education level</option>
+                            <option value="Primary School">Primary School</option>
+                            <option value="Secondary School (Incomplete)">Secondary School (Incomplete)</option>
+                            <option value="Secondary School (Complete)">Secondary School (Complete)</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="Bachelor's Degree">Bachelor's Degree</option>
+                            <option value="Master's Degree">Master's Degree</option>
+                            <option value="PhD">PhD</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="school">Name of School/University</label>
+                        <input type="text" id="school" class="form-control">
+                    </div>
+                    
+                    <h3>Course Information</h3>
+                    <div class="form-group">
+                        <label for="course">Select Course *</label>
+                        <select id="course" class="form-control" required>
+                            <option value="">Select a course</option>
+                            <option value="Software Development">Software Development</option>
+                            <option value="Cybersecurity Fundamentals">Cybersecurity Fundamentals</option>
+                            <option value="Web Applications Development">Web Applications Development</option>
+                            <option value="Ethical Hacking">Ethical Hacking</option>
+                            <option value="Microsoft Certifications">Microsoft Certifications</option>
+                            <option value="CompTIA Certifications">CompTIA Certifications</option>
+                            <option value="Microsoft Azure Cloud">Microsoft Azure Cloud</option>
+                            <option value="Advanced Security Certifications">Advanced Security Certifications</option>
+                            <option value="Networking Certifications">Networking Certifications</option>
+                            <option value="Tourism & Digital Marketing">Tourism & Digital Marketing</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Do you have any prior experience in this field?</label>
+                        <select id="experience" class="form-control">
+                            <option value="">Select an option</option>
+                            <option value="None">None</option>
+                            <option value="Beginner">Beginner (Some basic knowledge)</option>
+                            <option value="Intermediate">Intermediate (Some practical experience)</option>
+                            <option value="Advanced">Advanced (Professional experience)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goals">Why do you want to take this course? What are your career goals? *</label>
+                        <textarea id="goals" class="form-control" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hear">How did you hear about us? *</label>
+                        <select id="hear" class="form-control" required>
+                            <option value="">Select an option</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Friend/Family">Friend/Family</option>
+                            <option value="School/University">School/University</option>
+                            <option value="Advertisement">Advertisement</option>
+                            <option value="Search Engine">Search Engine</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="agree" class="form-check-input" required>
+                            <label for="agree" class="form-check-label">I agree to the terms and conditions and privacy policy *</label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Application</button>
+                </form>
+                <div id="formSuccess" style="display: none;">
+                    <div class="alert alert-success">
+                        <h3>Application Submitted Successfully!</h3>
+                        <p>Thank you for applying to East African Girls in Tech. We have received your application and will contact you within 5-7 business days with next steps.</p>
+                        <p>A confirmation email has been sent to your email address. Please check your inbox (and spam folder).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for more information about our programs.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Our Headquarters</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>123 Tech Street, Johannesburg, South Africa</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+27 780 570 803 (CEO - Hakizimana)</p>
+                                <p>+27 800 123 456 (Office)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@eastafricangirlsintech.org">info@eastafricangirlsintech.org</a></p>
+                                <p><a href="mailto:admissions@eastafricangirlsintech.org">admissions@eastafricangirlsintech.org</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Your Name *</label>
+                                <input type="text" id="contactName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Your Email *</label>
+                                <input type="email" id="contactEmail" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <input type="text" id="contactSubject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message *</label>
+                            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <div id="contactSuccess" style="display: none;">
+                        <div class="alert alert-success">
+                            <h3>Message Sent Successfully!</h3>
+                            <p>Thank you for contacting East African Girls in Tech. We have received your message and will respond within 2 business days.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-btn" id="chatBtn">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h3>Live Chat Support</h3>
+                <button class="close-chat" id="closeChat">&times;</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message received">
+                    <div class="message-content">
+                        Hello! Welcome to East African Girls in Tech. How can we help you today?
+                    </div>
+                    <div class="message-time">
+                        10:00 AM
+                    </div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <form class="chat-form" id="chatForm">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+                    <button type="submit" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>East African Girls in Tech is a non-profit organization dedicated to empowering young women across East Africa with technology skills that can transform their lives and communities.</p>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                        <p>123 Tech Street, Johannesburg, South Africa</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#testimonials">Success Stories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#apply">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Popular Courses</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="openCourseModal('software-development')">Software Development</a></li>
+                        <li><a href="#" onclick="openCourseModal('cybersecurity')">Cybersecurity</a></li>
+                        <li><a href="#" onclick="openCourseModal('microsoft-certs')">Microsoft Certifications</a></li>
+                        <li><a href="#" onclick="openCourseModal('comptia')">CompTIA Certifications</a></li>
+                        <li><a href="#" onclick="openCourseModal('networking')">Networking (CCNA/CCNP)</a></li>
+                        <li><a href="#" onclick="openCourseModal('tourism-marketing')">Tourism & Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt footer-contact-icon"></i>
+                        <p>+27 780 570 803 (CEO)<br>+27 800 123 456 (Office)</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope footer-contact-icon"></i>
+                        <p>info@eastafricangirlsintech.org<br>admissions@eastafricangirlsintech.org</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock footer-contact-icon"></i>
+                        <p>Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 East African Girls in Tech. All Rights Reserved. | Designed with ❤️ for East African Girls</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD9XJXZJZJZJZJZJZJZJZJZJZJZJZJZJZJZ",
+            authDomain: "east-african-girls-in-tech.firebaseapp.com",
+            databaseURL: "https://east-african-girls-in-tech.firebaseio.com",
+            projectId: "east-african-girls-in-tech",
+            storageBucket: "east-african-girls-in-tech.appspot.com",
+            messagingSenderId: "123456789012",
+            appId: "1:123456789012:web:abcdefghijklmnopqrstuv",
+            measurementId: "G-ABCDEFGHIJ"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        const auth = firebase.auth();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 576) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+
+        // Course modal functions
+        function openCourseModal(courseId) {
+            const modal = document.getElementById(`${courseId}-modal`);
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Scroll to apply form with course pre-selected
+        function scrollToApply(courseName) {
+            const applySection = document.getElementById('apply');
+            const courseSelect = document.getElementById('course');
+            
+            // Close any open modal
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+            
+            // Set the course value
+            courseSelect.value = courseName;
+            
+            // Scroll to apply section
+            applySection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Chat widget functionality
+        const chatBtn = document.getElementById('chatBtn');
+        const chatContainer = document.getElementById('chatContainer');
+        const closeChat = document.getElementById('closeChat');
+        const chatForm = document.getElementById('chatForm');
+        const chatInput = document.getElementById('chatInput');
+        const chatBody = document.getElementById('chatBody');
+
+        chatBtn.addEventListener('click', () => {
+            chatContainer.style.display = chatContainer.style.display === 'block' ? 'none' : 'block';
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatContainer.style.display = 'none';
+        });
+
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const message = chatInput.value.trim();
+            if (message) {
+                // Add user message to chat
+                addMessageToChat(message, 'sent');
+                chatInput.value = '';
+                
+                // Simulate reply after 1-3 seconds
+                setTimeout(() => {
+                    const replies = [
+                        "Thanks for your message! Our team will get back to you soon.",
+                        "We appreciate your interest in East African Girls in Tech!",
+                        "For immediate assistance, please call +27 800 123 456.",
+                        "Have you checked our FAQ section on the website?",
+                        "Would you like us to contact you by email instead?"
+                    ];
+                    const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                    addMessageToChat(randomReply, 'received');
+                }, 1000 + Math.random() * 2000);
+            }
+        });
+
+        function addMessageToChat(message, type) {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${type}`;
+            messageDiv.innerHTML = `
+                <div class="message-content">${message}</div>
+                <div class="message-time">${timeString}</div>
+            `;
+            
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Form submission handling
+        document.getElementById('studentApplicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const country = document.getElementById('country').value;
+            const city = document.getElementById('city').value;
+            const address = document.getElementById('address').value;
+            const dob = document.getElementById('dob').value;
+            const gender = document.getElementById('gender').value;
+            const education = document.getElementById('education').value;
+            const school = document.getElementById('school').value;
+            const course = document.getElementById('course').value;
+            const experience = document.getElementById('experience').value;
+            const goals = document.getElementById('goals').value;
+            const hear = document.getElementById('hear').value;
+            
+            // Create application object
+            const application = {
+                firstName,
+                lastName,
+                email,
+                phone,
+                country,
+                city,
+                address,
+                dob,
+                gender,
+                education,
+                school,
+                course,
+                experience,
+                goals,
+                hear,
+                timestamp: firebase.database.ServerValue.TIMESTAMP
+            };
+            
+            // Save to Firebase
+            const applicationsRef = database.ref('applications');
+            applicationsRef.push(application)
+                .then(() => {
+                    // Hide form and show success message
+                    document.getElementById('studentApplicationForm').style.display = 'none';
+                    document.getElementById('formSuccess').style.display = 'block';
+                    
+                    // Send confirmation email (this would be handled by a Firebase Cloud Function)
+                    sendConfirmationEmail(email, firstName, course);
+                    
+                    // Reset form (optional)
+                    this.reset();
+                })
+                .catch(error => {
+                    console.error('Error saving application:', error);
+                    alert('There was an error submitting your application. Please try again.');
+                });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // Create contact object
+            const contact = {
+                name,
+                email,
+                subject,
+                message,
+                timestamp: firebase.database.ServerValue.TIMESTAMP
+            };
+            
+            // Save to Firebase
+            const contactsRef = database.ref('contacts');
+            contactsRef.push(contact)
+                .then(() => {
+                    // Hide form and show success message
+                    document.getElementById('contactForm').style.display = 'none';
+                    document.getElementById('contactSuccess').style.display = 'block';
+                    
+                    // Send confirmation email (this would be handled by a Firebase Cloud Function)
+                    sendContactConfirmationEmail(email, name);
+                    
+                    // Reset form (optional)
+                    this.reset();
+                })
+                .catch(error => {
+                    console.error('Error saving contact:', error);
+                    alert('There was an error sending your message. Please try again.');
+                });
+        });
+
+        // Function to simulate sending confirmation email (would be a Firebase Cloud Function in production)
+        function sendConfirmationEmail(email, name, course) {
+            console.log(`Sending confirmation email to ${email}`);
+            // In a real implementation, this would trigger a Firebase Cloud Function
+            // that sends an actual email using SendGrid, Mailgun, etc.
+            
+            // For demo purposes, we'll just log it
+            const emailData = {
+                to: email,
+                subject: `Application Received - East African Girls in Tech`,
+                html: `
+                    <p>Dear ${name},</p>
+                    <p>Thank you for applying to the <strong>${course}</strong> program at East African Girls in Tech.</p>
+                    <p>We have received your application and will review it carefully. Our admissions team will contact you within 5-7 business days with next steps.</p>
+                    <p>If you have any questions in the meantime, please don't hesitate to reply to this email or contact us at admissions@eastafricangirlsintech.org.</p>
+                    <p>Best regards,</p>
+                    <p>The East African Girls in Tech Team</p>
+                `
+            };
+            
+            // In production, you would call a Firebase Cloud Function here
+            // Example:
+            // const sendEmail = firebase.functions().httpsCallable('sendEmail');
+            // sendEmail(emailData);
+            
+            console.log('Email data:', emailData);
+        }
+
+        function sendContactConfirmationEmail(email, name) {
+            console.log(`Sending contact confirmation email to ${email}`);
+            // Similar to above, this would be a Firebase Cloud Function in production
+            
+            const emailData = {
+                to: email,
+                subject: `Message Received - East African Girls in Tech`,
+                html: `
+                    <p>Dear ${name},</p>
+                    <p>Thank you for contacting East African Girls in Tech. We have received your message and a member of our team will respond within 2 business days.</p>
+                    <p>If your inquiry is urgent, please call our office at +27 800 123 456.</p>
+                    <p>Best regards,</p>
+                    <p>The East African Girls in Tech Team</p>
+                `
+            };
+            
+            console.log('Contact email data:', emailData);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Authentication state observer
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                // User is signed in
+                console.log('User is signed in:', user.email);
+                // You can update UI here if needed
+            } else {
+                // User is signed out
+                console.log('User is signed out');
+            }
+        });
+    </script>
+</body>
+</html>
